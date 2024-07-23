@@ -86,13 +86,35 @@ h3 {
   text-align: center;
 }
 
-.btn:hover {
+/* Hover effect only for non-touch devices */
+@media (hover: hover) {
+  .btn:hover {
+    background-color: #0EDD9D;
+    color: white;
+  }
+}
+
+/* Active state for touch devices */
+.btn:active {
   background-color: #0EDD9D;
+  opacity: .85;
+  color: white;
+}
+
+/* Remove focus styles if you want to keep the current behavior */
+.btn:focus {
+  outline: none;
 }
 
 .btn:focus, .btn:active {
   opacity: .85;
   box-shadow: none;
+}
+
+/* Ensure links inside buttons don't get underlined and stay white */
+a.btn, a.btn:hover, a.btn:active, a.btn:focus {
+  text-decoration: none !important;
+  color: white;
 }
 
 /* Contact information */
@@ -221,6 +243,12 @@ footer a {
 (-webkit-min-device-pixel-ratio: 1.25),
 (min-resolution: 1.25dppx),
 (min-resolution: 120dpi) {
+}
+
+@media (max-width: 768px) {
+  .btn {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 /* Print styles */
