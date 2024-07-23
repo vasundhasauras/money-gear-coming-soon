@@ -1,0 +1,255 @@
+/* Base styles */
+html {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header and Logo */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo img {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Main content */
+main {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.content {
+  flex: 1;
+  padding-right: 2.5rem;
+}
+
+/* Typography */
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+  color: #0EDD9D;
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.87rem;
+  color: #2A3B42;
+}
+
+/* Buttons */
+.buttons {
+  margin-bottom: 1.87rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  flex: 1;
+  display: inline-block;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #455A64;
+  color: white;
+  border-radius: 0.5rem;
+  transition: background-color 0.4s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #0EDD9D;
+}
+
+.btn:focus, .btn:active {
+  opacity: .85;
+  box-shadow: none;
+}
+
+/* Contact information */
+.contact-info {
+  font-size: 0.9rem;
+}
+
+.contact-info a {
+  color: #333;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Image container */
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: underline !important;
+}
+
+a:hover {
+  color: #0EDD9D;
+}
+
+/* Play Store Badge */
+.play-store-badge {
+  margin-top: -2rem;
+  padding-top: 0;
+  height: 7rem;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 0.6rem 0;
+  width: 100%;
+}
+
+footer a {
+  font-size: 0.6rem;
+  color: white;
+}
+
+/* Utility classes from boilerplate */
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  .content {
+    padding-right: 0;
+    margin-bottom: 2.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .image-container {
+    order: 2;
+    margin-bottom: 1.25rem;
+  }
+
+  .buttons {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .btn {
+    flex-basis: calc(50% - 0.5rem);
+    text-align: center;
+  }
+}
+
+/* High-resolution devices */
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+}
+
+/* Print styles */
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  img {
+    page-break-inside: avoid;
+  }
+
+  h2 {
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+  }
+}
