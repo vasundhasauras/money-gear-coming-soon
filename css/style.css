@@ -148,8 +148,11 @@ a {
   text-decoration: underline !important;
 }
 
-a:hover {
-  color: #0EDD9D;
+/* Hover effect only for non-touch devices */
+@media (hover: hover) {
+  a:hover {
+    color: #0EDD9D;
+  }
 }
 
 /* Play Store Badge */
@@ -248,6 +251,13 @@ footer a {
 @media (max-width: 768px) {
   .btn {
     -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Remove hover styles for all links on mobile */
+  a:hover {
+    color: inherit;
   }
 }
 
